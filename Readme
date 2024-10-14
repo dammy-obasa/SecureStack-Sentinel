@@ -1,0 +1,16 @@
+sudo apt update
+sudo apt install git
+
+sudo apt install python3-pip
+
+git clone https://github.com/dammy-obasa/SecureStack-Sentinel.git
+
+cd SecureStack-Sentinel
+
+# Make sure the shell scripts are executable
+chmod +x install_monitoring.sh security_audit.sh
+
+# Run the scripts in the background
+sudo python3 apache_setup.py & 
+sudo ./install_monitoring.sh & 
+sudo ./security_audit.sh & 
